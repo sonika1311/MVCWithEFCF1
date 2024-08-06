@@ -18,10 +18,10 @@ namespace MVCWithEFCF1.Controllers
             var products = dc.Products.Include(P => P.Category).Where(P => P.Discontinued == false);
             return View(products); 
         }
-        public ViewResult DisplayProduct(int Pid)
+        public ViewResult DisplayProduct(int Id)
         {
             dc.Configuration.LazyLoadingEnabled = false;
-            var product = (dc.Products.Include(P => P.Category).Where(P => P.Id == Pid && P.Discontinued == false)).Single();
+            var product = (dc.Products.Include(P => P.Category).Where(P => P.Id == Id && P.Discontinued == false)).Single();
             return View(product);
         }
         public ViewResult AddProduct()
