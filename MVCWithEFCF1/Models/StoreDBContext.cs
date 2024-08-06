@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MVCWithEFCF1.Models
 {
-    public class StoreDBContext
+    public class StoreDBContext :DbContext
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
